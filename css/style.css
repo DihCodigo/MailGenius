@@ -1,0 +1,313 @@
+/* Definindo variáveis */
+:root {
+    --primary-color: #101820; /* Azul escuro */
+    --secondary-color: #fafafa; /* Cinza claro */
+    --background-dark: #163b4c; /* Azul cinza */
+    --button-hover: #1e5372; /* Azul mais escuro para o hover */
+}
+/* Estilos globais */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #d3d3d3;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    padding: 0px 24px;
+}
+.logo {
+    font-family: "Orbitron", sans-serif;
+    font-size: 68px;
+    font-weight: 400;
+    color: #2a4251;
+    letter-spacing: 3px;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.logo::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, #1e5372, transparent);
+    transition: left 1s;
+    z-index: 900ms;
+}
+
+.logo:hover::before {
+    left: 100%;
+}
+
+.logo span {
+    position: relative;
+    z-index: 2;
+}
+
+.logo:hover {
+    animation: wiggle 0.5s ease-in-out forwards;
+}
+
+@keyframes wiggle {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(-5deg);
+    }
+    50% {
+        transform: rotate(5deg);
+    }
+    75% {
+        transform: rotate(-5deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+
+.logo-container {
+    background-image: url('../img/logo3.webp');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 350px; 
+    height: 70px;
+    margin-bottom: 20px;
+}
+.container {
+    background-color: var(--secondary-color);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 5px;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.container .btnDownload {
+    display: flex;
+    gap: 20px;
+    justify-content: right;
+    margin: 16px auto;
+}
+
+.group-btn {
+    width: 60%;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 16px 24px;
+    background-color: var(--primary-color);
+    border-radius: 4px;
+}
+
+.btn, .download-btn {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover, .download-btn:hover {
+    background-color: var(--button-hover);
+    color: var(--secondary-color);
+}
+
+select, input[type="text"], input[type="color"] {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    font-size: 16px;
+    margin-bottom: 10px;
+    width: 360px;
+}
+
+#aplicarEstilosDiv {
+    display: none;
+    padding: 20px;
+    margin: 8px;
+    background-color: var(--secondary-color);
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#aplicarEstilosDiv input[type="text"],
+#aplicarEstilosDiv input[type="color"],
+#aplicarEstilosDiv label,
+#aplicarEstilosDiv button {
+    margin-bottom: 10px;
+}
+
+#aplicarEstilosDiv input[type="text"],
+#aplicarEstilosDiv input[type="color"] {
+    width: calc(100% - 22px);
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    font-size: 16px;
+}
+
+#aplicarEstilosDiv label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--primary-color);
+}
+
+#aplicarEstilosDiv button {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#aplicarEstilosDiv button:hover {
+    background-color: var(--button-hover);
+    color: var(--secondary-color);
+}
+
+#tableContainer {
+    width: 100%;
+    /*height: 70vh;
+    overflow-y: auto;*/
+    margin-top: 0px;
+    background-color: var(--background-dark);
+    padding: 20px;
+    border-radius: 2px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.delete-button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.delete-button:hover {
+    background-color: #ff1a1a;
+    transform: scale(1.02);
+}
+
+.delete-button:active {
+    background-color: #cc0000;
+    transform: scale(0.75); 
+}
+
+.delete-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(255, 77, 77, 0.4);
+}
+.update-button {
+    background-color: #269e02;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.update-button:hover {
+    background-color: #165a01;
+    transform: scale(1.02);
+}
+
+.update-button:active {
+    background-color: #165a01;
+    transform: scale(0.75); 
+}
+
+.update-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(77, 255, 136, 0.4);
+}
+
+
+.styled {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+
+
+/* Outros estilos ... */
+.styled {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.styled td, .styled th {
+    border: 1px solid var(--primary-color);
+    text-align: left;
+    padding: 8px;
+}
+
+.styled th {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.selected {
+    background-color: rgba(252, 252, 140, 0.5);
+    border: 2px solid rgb(0, 0, 94) !important;
+}
+.selectable {
+    cursor: pointer;
+}
+
+/*Estilização para Mobile*/
+@media only screen and (max-width: 600px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        padding: 60px;
+        width: 360px !important;
+        max-width: 360px !important;
+        margin-bottom: 20px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #styled {
+        overflow-x: auto;
+        display: block;
+        width: 360px !important;
+        max-width: 360px !important;
+        margin-bottom: 20px;
+    }
+}

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MailGenius</title>
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/modal.css">
+<link rel="stylesheet" href="../css/logo.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-dJnLAWl+7uecUsG2beCr8LEe1oeUxnpM11yusHhrYjW33mz2ehgMNLf4rFuB08WWEN3y5FYB7J6ygL3Q5lqXxw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Lilita+One&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<div class="logo">Object<span style="color: #94b4bc;">1</span>ve</div>
+<div class="container">
+    <div class="group-btn">
+        <div class="logoGroup">
+            <div class="logoDi"><span class="diMail">MailGenius</span><span class="generator">Generator</span></div>
+        </div>
+        <div class="help-button">
+            Info
+            <button class="help-button" onclick="openModal1()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+              </svg>
+            </button>
+        </div>
+        
+        <button class="btn" onclick="gerarTabela()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-table" viewBox="0 0 16 16">
+                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm15 2h-4v3h4zm0 4h-4v3h4zm0 4h-4v3h3a1 1 0 0 0 1-1zm-5 3v-3H6v3zm-5 0v-3H1v2a1 1 0 0 0 1 1zm-4-4h4V8H1zm0-4h4V4H1zm5-3v3h4V4zm4 4H6v3h4z"/>
+            </svg>
+            Tabela
+        </button>
+        <button class="btn" onclick="adicionarColspan()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-file-plus" viewBox="0 0 16 16">
+                <path d="M8.5 6a.5.5 0 0 0-1 0v1.5H6a.5.5 0 0 0 0 1h1.5V10a.5.5 0 0 0 1 0V8.5H10a.5.5 0 0 0 0-1H8.5z"/>
+                <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1"/>
+              </svg>
+            Propriedades para Célula
+        </button>
+        <button class="btn" onclick="adicionarParagrafoComEstilo()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-text-paragraph" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5m4-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5"/>
+              </svg>
+            Parágrafo com Estilo
+        </button>
+        <button class="btn" onclick="adicionarImagem()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-images" viewBox="0 0 16 16">
+                <path d="M4.502 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"/>
+                <path d="M14.002 13a2 2 0 0 1-2 2h-10a2 2 0 0 1-2-2V5A2 2 0 0 1 2 3a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v8a2 2 0 0 1-1.998 2M14 2H4a1 1 0 0 0-1 1h9.002a2 2 0 0 1 2 2v7A1 1 0 0 0 15 11V3a1 1 0 0 0-1-1M2.002 4a1 1 0 0 0-1 1v8l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094l1.777 1.947V5a1 1 0 0 0-1-1z"/>
+              </svg>
+            Imagem
+        </button>
+        <!--<button class="btn" onclick="criarTabela()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-table" viewBox="0 0 16 16">
+                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm15 2h-4v3h4zm0 4h-4v3h4zm0 4h-4v3h3a1 1 0 0 0 1-1zm-5 3v-3H6v3zm-5 0v-3H1v2a1 1 0 0 0 1 1zm-4-4h4V8H1zm0-4h4V4H1zm5-3v3h4V4zm4 4H6v3h4z"/>
+            </svg>
+            Criar Tabela Dentro da Célula
+        </button>
+        <button class="btn" onclick="">
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-phone-flip" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M11 1H5a1 1 0 0 0-1 1v6a.5.5 0 0 1-1 0V2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v6a.5.5 0 0 1-1 0V2a1 1 0 0 0-1-1m1 13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-2a.5.5 0 0 0-1 0v2a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-2a.5.5 0 0 0-1 0zM1.713 7.954a.5.5 0 1 0-.419-.908c-.347.16-.654.348-.882.57C.184 7.842 0 8.139 0 8.5c0 .546.408.94.823 1.201.44.278 1.043.51 1.745.696C3.978 10.773 5.898 11 8 11q.148 0 .294-.002l-1.148 1.148a.5.5 0 0 0 .708.708l2-2a.5.5 0 0 0 0-.708l-2-2a.5.5 0 1 0-.708.708l1.145 1.144L8 10c-2.04 0-3.87-.221-5.174-.569-.656-.175-1.151-.374-1.47-.575C1.012 8.639 1 8.506 1 8.5c0-.003 0-.059.112-.17.115-.112.31-.242.6-.376Zm12.993-.908a.5.5 0 0 0-.419.908c.292.134.486.264.6.377.113.11.113.166.113.169s0 .065-.13.187c-.132.122-.352.26-.677.4-.645.28-1.596.523-2.763.687a.5.5 0 0 0 .14.99c1.212-.17 2.26-.43 3.02-.758.38-.164.713-.357.96-.587.246-.229.45-.537.45-.919 0-.362-.184-.66-.412-.883s-.535-.411-.882-.571M7.5 2a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1z"/>
+              </svg>
+            Criar Banner Mobile
+        </button>-->
+        <button class="btn" onclick="estilizarTabelaDentroCelula()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-table" viewBox="0 0 16 16">
+                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm15 2h-4v3h4zm0 4h-4v3h4zm0 4h-4v3h3a1 1 0 0 0 1-1zm-5 3v-3H6v3zm-5 0v-3H1v2a1 1 0 0 0 1 1zm-4-4h4V8H1zm0-4h4V4H1zm5-3v3h4V4zm4 4H6v3h4z"/>
+            </svg>
+            Estilizar Tabela Dentro da Célula
+        </button>
+        <button class="btn" onclick="adicionarLinhaHorizontalComEstilo()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-border-width" viewBox="0 0 16 16">
+                <path d="M0 3.5A.5.5 0 0 1 .5 3h15a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5zm0 5A.5.5 0 0 1 .5 8h15a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5zm0 4a.5.5 0 0 1 .5-.5h15a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5"/>
+              </svg>
+            Linha
+        </button>
+        
+    </div>
+
+    <div id="tableContainer">
+        <div>
+            <h2>MKT-HTML</h2>
+        </div>
+        <div class="btnDownload">
+            <button class="update-button" onclick="updateSelectedElement()">Atualizar Selecionado</button>
+            <button class="delete-button" onclick="deleteSelectedElement()">Deletar Selecionado</button>
+            <button class="download-btn" onclick="downloadHTML()" style="padding: auto;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cloud-download" viewBox="0 0 16 16">
+                    <path d="M4.406 1.342A5.53 5.53 0 0 1 8 0c2.69 0 4.923 2 5.166 4.579C14.758 4.804 16 6.137 16 7.773 16 9.569 14.502 11 12.687 11H10a.5.5 0 0 1 0-1h2.688C13.979 10 15 8.988 15 7.773c0-1.216-1.02-2.228-2.313-2.228h-.5v-.5C12.188 2.825 10.328 1 8 1a4.53 4.53 0 0 0-2.941 1.1c-.757.652-1.153 1.438-1.153 2.055v.448l-.445.049C2.064 4.805 1 5.952 1 7.318 1 8.785 2.23 10 3.781 10H6a.5.5 0 0 1 0 1H3.781C1.708 11 0 9.366 0 7.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383"/>
+                    <path d="M7.646 15.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 14.293V5.5a.5.5 0 0 0-1 0v8.793l-2.146-2.147a.5.5 0 0 0-.708.708z"/>
+                  </svg> 
+            </button>
+            
+        </div>
+
+        <div id="tableWrapper"></div>
+        <div id="aplicarEstilosDiv" style="display: none;">
+            <label for="width">Width:</label>
+            <input type="text" id="width" name="width" placeholder="Ex: 100px" onchange="aplicarEstilos()"><br><br>
+            <label for="height">Height:</label>
+            <input type="text" id="height" name="height" placeholder="Ex: 100px" onchange="aplicarEstilos()"><br><br>
+            <label for="background-color">BgColor:</label>
+            <input type="color" id="background-color" name="background-color" style="width: 360px;height: 32px;" placeholder="Ex: #ffffff" onchange="aplicarEstilos()"><br><br>
+            <label for="cellspacing">CellSpacing:</label>
+            <input type="text" id="cellspacing" name="cellspacing" placeholder="Ex: 5" onchange="aplicarEstilos()"><br><br>
+            <label for="cellpadding">CellPadding:</label>
+            <input type="text" id="cellpadding" name="cellpadding" placeholder="Ex: 10" onchange="aplicarEstilos()"><br><br>
+            <label for="align">Align:</label>
+            <select id="align" name="align" onchange="aplicarEstilos()">
+                <option value="">Selecione...</option>
+                <option value="left">Esquerda</option>
+                <option value="center">Centro</option>
+                <option value="right">Direita</option>
+            </select><br><br>
+            <button class="appstyle" onclick="ocultarFormulario()">Aplicar Estilos</button>
+        </div>
+        
+    </div>
+</div>
+<!-- Modal 1-->
+<div id="helpModal1" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <p style="color: red;padding-left: 20px;font-weight: bold;font-size: 24px;text-transform: uppercase;">Guia de Funcionalidades do Editor:</p>
+        <p style="color: #333;font-weight: bold;padding-left: 20px;">Informações adicionais para cada funcionalidade:</p>
+        <p style="color: #333;padding-left: 20px;">
+            <span style="color: red;font-weight: 700;">1.</span> <b style="text-transform: uppercase;">Download HTML:</b> <br>
+            <span style="color: red;font-weight: 700;">-</span> Este botão permite que você faça o download do HTML gerado. <br>
+            <span style="color: red;font-weight: 700;">-</span> Ao clicar neste botão, o arquivo HTML será baixado para o seu dispositivo. <br>
+            <br>
+            <span style="color: red;font-weight: 700;">2.</span> <b style="text-transform: uppercase;">Tabela:</b> <br>
+            <span style="color: red;font-weight: 700;">-</span> Ao clicar neste botão, você será solicitado a inserir a quantidade de linhas desejadas para a tabela. <br>
+            <span style="color: red;font-weight: 700;">-</span> Em seguida, você será perguntado sobre o número de colunas em cada linha. <br>
+            <span style="color: red;font-weight: 700;">-</span> Após a criação da tabela, um formulário será exibido para que você possa estilizar o formato da tabela, como bordas, cores e tamanho das células. <br>
+            <br>
+            <span style="color: red;font-weight: 700;">3.</span> <b style="text-transform: uppercase;">Adicionar Propriedades para Célula:</b> <br>
+            <span style="color: red;font-weight: 700;">-</span> Este botão permite adicionar a propriedade colspan, que manipula a quantidade de colunas em uma linha específica. <br>
+            <span style="color: red;font-weight: 700;">-</span> Além disso, você pode ajustar o alinhamento e a cor da célula selecionada após a criação do colspan. <br>
+            <br>
+            <span style="color: red;font-weight: 700;">4.</span> <b style="text-transform: uppercase;">Adicionar Parágrafo com Estilo:</b> <br>
+            <span style="color: red;font-weight: 700;">-</span> Ao clicar neste botão, você pode adicionar um novo parágrafo ao seu documento. <br>
+            <span style="color: red;font-weight: 700;">-</span> Você também tem a opção de adicionar estilos personalizados, como fonte, tamanho e cor do texto, para o parágrafo inserido. <br>
+            <br>
+            <span style="color: red;font-weight: 700;">5.</span> <b style="text-transform: uppercase;">Adicionar Imagem:</b> <br>
+            <span style="color: red;font-weight: 700;">-</span> Este botão permite inserir uma imagem no seu documento. <br>
+            <span style="color: red;font-weight: 700;">-</span> Clique para selecionar e adicionar uma imagem da sua galeria de arquivos. <br>
+            <br>
+            <span style="color: red;font-weight: 700;">6.</span> <b style="text-transform: uppercase;">Estilizar Tabela Dentro da Célula:</b> <br>
+            <span style="color: red;font-weight: 700;">-</span> Com este botão, você pode criar uma tabela dentro de uma célula existente. <br>
+            <span style="color: red;font-weight: 700;">-</span> Além disso, é possível aplicar estilos específicos à tabela interna, como cores de fundo, bordas e espaçamento entre células. <br>
+        </p>
+    </div>
+</div>
+<script src="../js/download.js"></script>
+<script src="../js/script.js"></script>
+<script src="../js/modal.js"></script>
+</body>
+</html>
